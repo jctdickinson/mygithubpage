@@ -16,9 +16,11 @@
 title: Jacob Carl Toshiro Dickinson
 email: carl@tosiro.me
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Hello there. My name is Jacob Carl Toshiro Dickinson. You can call me Carl. 
+  I am currently a Computer Science & Engineering at UC Irvine.
+
+  こんにちは。元早稲田大学生、現在UCアーバインでコンピューターサイエンス＆工学を
+  勉強しておりますジェイコブ・カール・トシロウ・ディキンソンと申します。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "tosiro.me" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jctdickinson
