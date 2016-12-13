@@ -16,7 +16,7 @@ Hello there. My name is Jacob Carl Toshiro Dickinson. You can call me Carl. I am
 <hr/>
 <br/>
 <span class="contacticon center">
-	<a href="mailto:carl@tosio.me"><i class="fa fa-envelope-square"></i></a>
+	<a href="mailto:carl@tosiro.me"><i class="fa fa-envelope-square"></i></a>
 	<a href="https://github.com/jctdickinson" target="_blank"><i class="fa fa-github-square"></i></a>
 	<a href="https://www.linkedin.com/in/jacob-carl-toshiro-dickinson-852729122" target="_blank"><i class="fa fa-linkedin-square"></i></a>
 	<a href="https://twitter.com/jctdickinson" target="_blank"><i class="fa fa-twitter-square"></i></a>

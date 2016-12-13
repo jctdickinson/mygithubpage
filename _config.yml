@@ -1,6 +1,6 @@
 # Site settings
-title: tosio.me
-email: carl@tosio.me
+title: tosiro.me
+email: carl@tosiro.me
 description: > # this means to ignore newlines until "baseurl:"
   A simple, whitespace, helvetica based portfolio theme.
 baseurl:  # the subpath of your site, e.g. /blog/
