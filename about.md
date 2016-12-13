@@ -7,10 +7,10 @@ permalink: /about/
 <img class="col one right" src="/img/prof_pic.jpg">
 
 <br/>
-Write your biography here. Tell the world about yourself. Link to your favorite <a href="http://reddit.com" target="blank">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture "prof_pic.jpg" and put it in the img folder. 
 
-Link to your social media connections, too. This theme is set up to use <a href="http://fortawesome.github.io/Font-Awesome/" target="blank">Font Awesome icons</a>, like the ones below. Add your facebook, twitter, linkedin, or just disable all of them. 
+Hello there. My name is Jacob Carl Toshiro Dickinson. You can call me Carl. I am currently studying Computer Science & Engineering at UC Irvine, and hope to become a fulltime software engineer sometime in the near future. I've been all over the world, lived in both the USA and Japan, and have extensive professional experience in Japanese translation and localization consultation. When I'm not coding you might find me sipping coffee at my local café with a good book, or perhaps somewhere outside climbing rocks.
 
+こんにちは。元早稲田大学生、ソフトウェアエンジニアとしての就職を目指して現在UCアーバインでコンピューターサイエンス＆工学を勉強しておりますジェイコブ・カール・トシロウ・ディキンソンと申します。カールとお呼びください。旅行好きで、アメリカ、日本にも住んだことあり、翻訳と局所化解析の分野では豊富な経験もあります。プログラミングしていない時は、近所の喫茶店でコーヒーを飲みながらクレヨンしんちゃんを読んでいるか、どこかで岩登りをしています。
 
 <br/>
 <hr/>
