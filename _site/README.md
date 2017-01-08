@@ -1,3 +1,5 @@
+The content found here is what makes up jctdickinson's website, tosiro.me. It was built on top of *folio, by Lia Bogoev. Information on htis layout can be found below:
+
 # *folio
 A simple theme for showcasing your work, emphasis on whitespace, transparency, and helvetica. 
 
