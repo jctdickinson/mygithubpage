@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Post-holiday blues</title>
+    <meta name="description" content="A simple, whitespace, helvetica based portfolio theme.
+">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/2016/01/08/title.html">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <nav class="site-nav">
+
+      <div class="trigger">
+        <!-- tosiro.me instead of blog -->
+        <a class="page-link" href="/">blog</a>
+
+        
+          
+          <a class="page-link" href="/about/">about</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/portfolio/">portfolio</a>
+          
+        
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Post-holiday blues</h1>
+    <p class="post-meta">January 8, 2016 — 22:08</p>
+  </header>
+
+  <article class="post-content">
+    <p>What better way to wrap up the holidays with a bit of algorithm review?</p>
+
+<p>The few weeks I have had off this winter have been wonderful. Alas, it is back to school tomorrow for me, but it was nice to finally be able to relax a little, and spend some time with friends and family. I ate way too much good food and did my best to catch up on sleep. I even managed to devote a few days to mindlessly playing video games, a luxury I have not been able to afford very often in my aduly life. I planned to go on a climbing trip or two, which ultimately only amounted to a few trips to the gym, where I found all the cake had dragged me down a grade or two. That’s okay. It was worth it.</p>
+
+<p>For better or for worse, I spent much of my time this break mowing (or stumbling) through problems in <em>Cracking the Coding Interview</em> and on Leetcode.</p>
+
+<p>Reverse Integer can be found on <a href="https://leetcode.com/problems/reverse-integer/">here on Leetcode</a>. This is my solution:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :type x: int</span>
+<span class="sd">        :rtype: int</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reversedNum</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">negate</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+             <span class="n">negate</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="n">lenX</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lenX</span><span class="p">):</span>
+            <span class="n">reversedNum</span> <span class="o">+=</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">lenX</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">x</span> <span class="o">//=</span> <span class="mi">10</span>
+
+        <span class="n">INT_MAX</span> <span class="o">=</span> <span class="mi">2147483647</span>
+        <span class="c1"># INT_MIN = -2147483648</span>
+
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">reversedNum</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">INT_MAX</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+        <span class="k">return</span> <span class="n">reversedNum</span> <span class="o">*</span> <span class="n">negate</span></code></pre></figure>
+
+<p>Every once in a while, I use C++ just for fun, but Python is generally my weapon of choice for algorithm problems. Ultimately, from the interviewer’s perspective, the language a candidate uses does not matter - might as well use one that can be written quickly and clearly by hand on a whiteboard.</p>
+
+<p>This problem is fairly straighforward. We just need to make sure we cover negative numbers and stay within the appropriate range for integers (-2147483648 to 2147483647).</p>
+
+<p>To cover negative numbers, we can simply check if the number is less than zero. If it is, we’ll store a negative one in our <code>negate</code> variable, allowing us to later set the reversed number to the correct magnitude. We must store this information here, as we next take the absolute value of x, since the actual reversal of the digits in our integer relies on addition:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span>	<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">negate</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></figure>
+
+<p>After taking the length of <code>x</code>, since we are dealing with decimal values, we know we can “shave off” digits, one-by-one, simply by taking <code>x % 10</code>. We can multiply this number by 10 to the power of <code>lenX - (i + 1)</code> to make sure it takes the proper place value. Of course, we need to store this in a new variable <code>reversedNum</code>, as well as modify <code>x</code> every step of the for loop in order to access the next digit:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lenX</span><span class="p">):</span>
+            <span class="n">reversedNum</span> <span class="o">+=</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">lenX</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">x</span> <span class="o">//=</span> <span class="mi">10</span></code></pre></figure>
+
+<p>After this, all that is left for us to do is make sure our reversed number still qualifies as an integer, and if so, return <code>reversedNum * negate</code> in order to ensure the proper magnitude.</p>
+
+<p>This solution generally runs in O(n) time, and last time I checked, beat about 85% of other accepted Python solutions. Of course, this number depends on the time of day, temperature, humidity, and rate of decine in one’s local bee population, so it doesn’t mean much, but I’ll take it.</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+  	<p>This site was built using <a href="http://jekyllrb.com" target="_blank">Jekyll</a> and is hosted on <a href="https://github.com" target="_blank">Github</a> Text generated with <a href="http://hipsum.co" target="_blank">Hipster Ipsum</a>. &#169; 2016</p>
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

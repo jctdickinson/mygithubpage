@@ -1,0 +1,69 @@
+---
+layout: post
+title: Post-holiday blues
+date: 2016-01-08 22:08
+description: And reversing the digits of an integer with Python
+---
+
+What better way to wrap up the holidays with a bit of algorithm review?
+
+The few weeks I have had off this winter have been wonderful. Alas, it is back to school tomorrow for me, but it was nice to finally be able to relax a little, and spend some time with friends and family. I ate way too much good food and did my best to catch up on sleep. I even managed to devote a few days to mindlessly playing video games, a luxury I have not been able to afford very often in my aduly life. I planned to go on a climbing trip or two, which ultimately only amounted to a few trips to the gym, where I found all the cake had dragged me down a grade or two. That's okay. It was worth it.
+
+For better or for worse, I spent much of my time this break mowing (or stumbling) through problems in *Cracking the Coding Interview* and on Leetcode.
+
+Reverse Integer can be found on [here on Leetcode](https://leetcode.com/problems/reverse-integer/). This is my solution:
+
+{% highlight python %}
+
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        reversedNum = 0
+        negate = 1
+
+        if x < 0:
+             negate = -1
+            x = abs(x)
+
+        lenX = len(str(x))
+
+        for i in range(0, lenX):
+            reversedNum += (x % 10) * 10**(lenX - (i + 1))
+            x //= 10
+
+        INT_MAX = 2147483647
+        # INT_MIN = -2147483648
+
+        if abs(reversedNum) > INT_MAX:
+            return 0
+
+        return reversedNum * negate
+
+{% endhighlight %}
+
+Every once in a while, I use C++ just for fun, but Python is generally my weapon of choice for algorithm problems. Ultimately, from the interviewer's perspective, the language a candidate uses does not matter - might as well use one that can be written quickly and clearly by hand on a whiteboard.
+
+This problem is fairly straighforward. We just need to make sure we cover negative numbers and stay within the appropriate range for integers (-2147483648 to 2147483647).
+
+To cover negative numbers, we can simply check if the number is less than zero. If it is, we'll store a negative one in our `negate` variable, allowing us to later set the reversed number to the correct magnitude. We must store this information here, as we next take the absolute value of x, since the actual reversal of the digits in our integer relies on addition:
+
+{% highlight python %}
+	if x < 0:
+            negate = -1
+            x = abs(x)
+{% endhighlight %}
+
+After taking the length of `x`, since we are dealing with decimal values, we know we can "shave off" digits, one-by-one, simply by taking `x % 10`. We can multiply this number by 10 to the power of `lenX - (i + 1)` to make sure it takes the proper place value. Of course, we need to store this in a new variable `reversedNum`, as well as modify `x` every step of the for loop in order to access the next digit:
+
+{% highlight python %}
+for i in range(0, lenX):
+            reversedNum += (x % 10) * 10**(lenX - (i + 1))
+            x //= 10
+{% endhighlight %}
+
+After this, all that is left for us to do is make sure our reversed number still qualifies as an integer, and if so, return `reversedNum * negate` in order to ensure the proper magnitude.
+
+This solution generally runs in O(n) time, and last time I checked, beat about 85% of other accepted Python solutions. Of course, this number depends on the time of day, temperature, humidity, and rate of decine in one's local bee population, so it doesn't mean much, but I'll take it.
